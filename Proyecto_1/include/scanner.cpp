@@ -1,5 +1,5 @@
 #include "../lib/scanner.h"
-// #include "../lib/disco.h"
+#include "../lib/disco.h"
 // #include "../lib/mount.h"
 // #include "../lib/report.h"
 // #include "../lib/filesystem.h"
@@ -15,7 +15,7 @@
 #include <cstdlib>
 using namespace std;
 
-// Disk disco;
+Disk disco;
 // Mount mount;
 // Report report;
 // Users user;
@@ -63,19 +63,13 @@ void scanner::functions(string token, vector<string> tks)
     if (compare(token, "MKDISK"))
     {
         cout << "FUNCION MKDISK" << endl;
-        //imprimir vector
-        cout << "Instrucciones: " << endl;
-        for (int i = 0; i < tks.size(); i++)
-        {
-            cout << tks[i] << endl;
-        }
-        //disco.mkdisk(tks); // [-size=10, -u=m, -path=/home/hola.dk]
+        disco.mkdisk(tks); // [-size=10, -u=m, -path=/home/hola.dk]
     }else if(compare(token, "RMDISK")){
         cout << "FUNCION RMDISK" << endl;
         //disco.rmdisk(tks);
     }else if(compare(token, "FDISK")){
         cout << "FUNCION FDISK" << endl;
-        //disco.fdisk(tks);
+        disco.fdisk(tks);
     }else if(compare(token, "MOUNT")){
         cout << "FUNCION MOUNT" << endl;
         //mount.mount(tks);
