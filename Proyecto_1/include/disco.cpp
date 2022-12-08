@@ -46,7 +46,7 @@ void Disk::mkdisk(vector<string> tokens){
             }else{
                 scan.errores("MKDISK","parametro U repetido en el comando"+tk);
             }
-        }else if (scan.compare(tk, "p"))
+        }else if (scan.compare(tk, "path"))
         {
             if (path.empty())
             {
@@ -200,7 +200,7 @@ void Disk::fdisk(vector<string> context){
         }
     }
     if (!dlt) {
-        vector<string> required = {"s", "p", "n"};
+        vector<string> required = {"s", "path", "name"};
         string size;
         string u = "k";
         string path;
@@ -224,7 +224,7 @@ void Disk::fdisk(vector<string> context){
                 }
             } else if (shared.compare(id, "u")) {
                 u = current;
-            } else if (shared.compare(id, "p")) {
+            } else if (shared.compare(id, "path")) {
                 if (count(required.begin(), required.end(), id)) {
                     auto itr = find(required.begin(), required.end(), id);
                     required.erase(itr);
@@ -234,7 +234,7 @@ void Disk::fdisk(vector<string> context){
                 type = current;
             } else if (shared.compare(id, "f")) {
                 f = current;
-            } else if (shared.compare(id, "n")) {
+            } else if (shared.compare(id, "name")) {
                 if (count(required.begin(), required.end(), id)) {
                     auto itr = find(required.begin(), required.end(), id);
                     required.erase(itr);
