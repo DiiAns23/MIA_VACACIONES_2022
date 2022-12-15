@@ -18,7 +18,7 @@ void Mount::mount(vector<string> command){
     string path;
     string name;
 
-    for (auto current : command){
+    for (auto current : command){ // path=/home
         string id = shared.lower(current.substr(0, current.find("=")));
         current.erase(0, id.length() + 1);
         if(current.substr(0,1) == "\""){
