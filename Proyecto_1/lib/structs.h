@@ -18,7 +18,7 @@ public:
         char part_type;  // P, E, L
         char part_fit; // configuracion wf, bf, ff
         int part_start = -1; //
-        int part_size = 0; //
+        int part_size = 0; 
         char part_name[16]; //nombre maximo de 16 char
     } Partition; // Pesa 27 bytes
 
