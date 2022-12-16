@@ -5,7 +5,6 @@ require('dotenv').config(); // Recibe las variables de entorno
 
 const router = Router();
 const usuariosController = require('../controllers/usuarios.controller');
-const { route } = require('../app');
 
 // Ruta principal
 router.get('/', (req, res) => {
