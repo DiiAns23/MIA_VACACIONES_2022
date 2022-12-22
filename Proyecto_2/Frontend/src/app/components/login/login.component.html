@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col align-self-center">
+            <form action="" class="box">
+                <h1>Sing In</h1>
+                <p class="text-muted">Please enter your login and password</p>
+                <input [(ngModel)]="username" type="text" 
+                name="username" placeholder="Username">
+                <input [(ngModel)]="password" type="password" name="password" placeholder="Password">
+                <input (click)="Login()" type="submit" name="" value="Login">
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
