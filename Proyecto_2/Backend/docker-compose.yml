@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  backend:
+    image: 'diians2302/backend-mia'
+    container_name: 'backend-NodeJS'
+    environment:
+      USUARIO: 'Diego Obin'
+      PASSWORD: 'p@ssw0rd'
+      PORT: '3000'
+    ports:
+      - '3000:3000'
+    restart: always

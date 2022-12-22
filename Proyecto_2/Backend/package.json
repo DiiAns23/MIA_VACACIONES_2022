@@ -11,7 +11,11 @@
   "author": "Diego Obin",
   "license": "ISC",
   "dependencies": {
+    "amazon": "^0.0.0",
+    "amazon-cognito-identity-js": "^6.1.1",
+    "aws": "^0.0.3-2",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-validator": "^6.14.2",
