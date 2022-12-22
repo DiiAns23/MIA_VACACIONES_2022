@@ -18,4 +18,6 @@ app.get('/', (req, res) =>{
 // RUTA DE USUARIOS
 app.use('/usuarios', require('./routes/usuarios.route.js'));
 
+app.use('/login', require('./routes/login_register.route.js'));
+
 module.exports = app;

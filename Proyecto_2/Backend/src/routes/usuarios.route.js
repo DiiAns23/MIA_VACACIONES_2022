@@ -10,10 +10,19 @@ const usuariosController = require('../controllers/usuarios.controller');
 router.get('/', (req, res) => {
     res.json({
         status: "1",
-        msg: "Estamos en la api de usuarios"
+        msg: "Este fue un cambio que realizamos en la rama de desarrollo"
     });
 });
 
+router.get('/getEnv', (req, res) => {
+    usuario = process.env.USUARIO;
+    password = process.env.PASSWORD;
+    res.json({
+        status: "1",
+        usuario,
+        password
+    })
+});
 
 // Ruta para obtener todos los usuarios
 router.get('/getUsers', (req,res)=>{

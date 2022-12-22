@@ -4,23 +4,23 @@ const validateAtibutes = require('../middleware/validateAtibutes');
 require('dotenv').config(); // Recibe las variables de entorno
 
 const router = Router();
-const usuariosController = require('../controllers/usuarios.controller');
-
-// Ruta principal
-router.get('/', (req, res) => {
-    res.json({
-        status: "1",
-        msg: "Estamos en la api de usuarios"
-    });
-});
+const loginController = require('../controllers/login_register.controller');
 
 // Registro de Usuario Turista
 router.post('/register', [
-    check('nombre', 'El nombre es obligatorio').not().isEmpty(),
     check('usuario', 'El usuario es obligatorio').not().isEmpty(),
-    check('email', 'El email es obligatorio').not().isEmpty(),
-    check('foto', 'La foto es obligatoria').not().isEmpty(),
+    check('email', 'El email es obligatorio').isEmail(),
     check('password', 'El password es obligatorio').not().isEmpty(),
     validateAtibutes],
-    usuariosController.register
+    loginController.register
 );
+
+// Login de Usuario Turista
+router.post('/login', [
+    check('usuario', 'El usuario es obligatorio').not().isEmpty(),
+    check('password', 'El password es obligatorio').not().isEmpty(),
+    validateAtibutes],
+    loginController.login
+);
+
+module.exports = router;
