@@ -61,7 +61,51 @@ const signInCognito = async(req, res) => {
 
 }
 
+const deleteUserCognitoA = async (req, res) => {
+    const username = req.body.us
+    const password = req.body.contranueva
+
+    const hash = crypto.createHash('sha256').update(password).digest('hex') + "D**";
+
+    const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
+        Username: username,
+        Password: hash
+    });
+    
+    const userData = {
+        Username: username,
+        Pool: userPool
+    };
+    var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+    
+    cognitoUser.authenticateUser(authenticationDetails, {
+        onSuccess: function (result) {
+            cognitoUser.deleteUser((err, result) => {
+                if (err) {
+                    res.status(400).json({
+                        status: false,
+                        message: 'Error al eliminar usuario',
+                    });
+                } else {
+                    res.status(200).json({
+                        status: true,
+                        message: 'Usuario eliminado correctamente',
+                    });
+                }
+            });
+        },
+        onFailure: function (err) {
+            console.log('Entra aqui con error: ' + err);
+            res.status(500).json({
+                'status': false,
+                'msg':err
+                });
+        }
+    });
+}
+
 module.exports = {
     signUpCognito,
-    signInCognito
+    signInCognito,
+    deleteUserCognitoA
 }
