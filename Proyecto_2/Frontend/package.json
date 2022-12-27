@@ -18,9 +18,13 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "auth": "^0.0.9",
     "bootstrap": "^5.2.3",
+    "guard": "^0.1.2",
     "httpclient": "^0.1.0",
     "rxjs": "~7.5.0",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.6.16",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
