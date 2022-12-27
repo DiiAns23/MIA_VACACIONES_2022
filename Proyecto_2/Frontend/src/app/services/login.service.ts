@@ -41,4 +41,25 @@ export class LoginService {
         headers: this.headers 
       });
   }
+
+  LogOut1(){
+    localStorage.removeItem('User_Logged');
+  }
+
+  SetCurrentUser(user:string){
+    let user_string = user;
+    localStorage.setItem('User_Logged',user_string);
+  }
+
+
+  GetCurrentUser(){
+    let userCurrent = localStorage.getItem('User_Logged');
+    if(userCurrent!= null && userCurrent!=undefined){
+      let user_json = userCurrent;
+      return user_json;
+    }else{
+      return null;
+    }
+  }
+
 }

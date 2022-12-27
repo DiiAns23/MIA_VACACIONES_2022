@@ -9,6 +9,24 @@
                 name="username" placeholder="Username">
                 <input [(ngModel)]="password" type="password" name="password" placeholder="Password">
                 <input (click)="Login()" type="submit" name="" value="Login">
+
+                <div class="file has-name is-small is-info justify-content-center ">
+                    <label class="file-label">
+                    <input class="file-input" type="file"  name="imagen" (change)="fileSelected($event)">
+                    <span class="file-cta">
+                        <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                        Choose a file…
+                        </span>
+                    </span>
+                    
+                    </label>
+                </div>
+
+
+
             </form>
         </div>
         <div class="col"></div>

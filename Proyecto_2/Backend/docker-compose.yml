@@ -5,8 +5,9 @@ services:
     image: 'diians2302/backend-mia'
     container_name: 'backend-NodeJS'
     environment:
-      USUARIO: 'Diego Obin'
+      USUARIO: 'DiiAns23'
       PASSWORD: 'p@ssw0rd'
+      EMAIL: 'correito@gmail.com'
       PORT: '3000'
     ports:
       - '3000:3000'
